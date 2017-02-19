@@ -5,6 +5,7 @@
 # Must be run as root for nmap to output mac addresses.
 
 # Scan network for devices and parse nmap output for hostnames and mac addresses
+# Edit this line with your desired IP range(s) and your domain name
 nmap -sS --max-retries 2 --defeat-rst-ratelimit -T 5 -M 36 192.168.0-5.0-255 | grep -Ei 'scan report for|mac address' | paste -d " " - - | grep ".domain.tld" | awk -F ' ' '{print $5"\t\t"$9}' >> /root/macscanner/macs-out.txt
 
 # Clean up list formatting and remove entries without hostnames
