@@ -10,3 +10,4 @@ Developed in conjunction with my [Wake-Send.ps1](https://github.com/a-abella/Wak
 1. Edit script source with your relevant IP range and domain name information.
 2. Must be run as root for Nmap to see host MAC address data.
 3. Most effective when run frequently to collect new devices.
+4. As Nmap collects MAC address data from broadcast frames, this script can only collect data from the executing host's subnet. To collect from multiple subnets you will need a host on each subnet.
